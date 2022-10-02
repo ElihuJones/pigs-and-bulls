@@ -14,6 +14,6 @@ Source: [Wikipedia](https://en.wikipedia.org/wiki/Bulls_and_Cows)
 
 Status
 ------
-This project is currently in-progress. Next steps can be found under our task management page: [Product Backlog] (https://github.com/users/ElihuJones/projects/1 "Product Backlog")
+This project is currently in-progress. Next steps can be found under our task management page: [Product Backlog](https://github.com/users/ElihuJones/projects/1)
 
 [^1]: A word or phrase in which each letter occurs the same number of times
