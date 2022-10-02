@@ -1,9 +1,10 @@
 # Team Project
+Pigs and Bulls
 
 Description
 -----------
 
-This project is for the game: Pigs and Bulls. Pigs and Bulls stems from a code breaking game usually played on paper and pencil between two players. In this game the user attempts to decypher an isogram[^1] with a limited number of turns.
+This project is for the game: Pigs and Bulls. This game stems from a code breaking game usually played on paper and pencil between two players. In this game the user attempts to decypher an isogram[^1] with a limited number of turns.
 
 In a console, the players each write a 5 character secret word. The characters must all be different. Then, in turn, the players attempt to guess their opponent's number and the program gives the number of matches.
 1. Correctly guessed letter of main word is a Pig.
