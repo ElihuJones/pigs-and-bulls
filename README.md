@@ -32,7 +32,7 @@ If 1 player is chosen:
 
 * Computer generates word with no characters repeating, 5 characters long. 
     *** Play Order**: 
-      * Player inputs guesses until turns run out 
+      * Player inputs guesses until turns run out (currently 5, the length of the word).
           * Input word checked for valid input, if invalid, output invalid input and state input requirements to the user.  
           * Program compares guess to secret: 
               * A correctly guessed letter of the word is a Pig. 
@@ -50,7 +50,7 @@ If 2 players is chosen:
 * Player 2 inputs 5 letter word 
     * Input word checked for valid input, if invalid, output invalid input and state input requirements to the user.  
 * Player 1 goes first: 
-    * Follow **Play Order** for 1 player 
+    * Follows **Play Order** for 1 player 
 * Player 2 goes second: 
     * Follows **Play Order** for 1 player 
 * Game Victory Conditions for multiplayer 
