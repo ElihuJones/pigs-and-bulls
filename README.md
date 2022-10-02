@@ -11,6 +11,6 @@ In a console, the players each write a 5 character secret word. The characters m
 2. Correctly guessed letter of main word is also correctly positioned is a Bull.
 The player wins when the guessed letters match with the secret word: every character is a Bull.
 
-Source: [Wikipedia]("https://en.wikipedia.org/wiki/Bulls_and_Cows")
+Source: [Wikipedia](https://en.wikipedia.org/wiki/Bulls_and_Cows)
 
 [^1]: A word or phrase in which each letter occurs the same number of times
