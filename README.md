@@ -32,7 +32,8 @@ If 1 player is chosen:
 
 * Computer generates word with no characters repeating, 5 characters long. 
     *** Play Order**: 
-      * Player inputs guesses until turns run out (currently 5, the length of the word).
+      * Player inputs guesses until turns run out (currently 5, the length of the word)
+      
           * Input word checked for valid input, if invalid, output invalid input and state input requirements to the user.  
           * Program compares guess to secret: 
               * A correctly guessed letter of the word is a Pig. 
