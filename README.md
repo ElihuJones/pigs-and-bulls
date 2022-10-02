@@ -23,9 +23,9 @@ Pseudocode
 Open console/Run Program 
 Instructions page: 
 User can see Instructions: 
-Markup: * Play Game or How to Play, options 
-          * How to Play will show an Instructions screen: 
-            * No duplicate letters, 5 letter UPPERCASE word. 
+* Play Game or How to Play, options 
+ * How to Play will show an Instructions screen: 
+  * No duplicate letters, 5 letter UPPERCASE word. 
 User can choose 1 player or 2 player game.  
 
 If 1 player is chosen: 
