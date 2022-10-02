@@ -65,32 +65,32 @@ If 2 players is chosen:
 Concerns/Increased Scope Ideas: 
 -------------------------------
 
-Formatted strings for user's ease in a console environment between windows & mac:  
+1. Formatted strings for user's ease in a console environment between windows & mac:  
 * Correctly positioned letter in word is a pig and underlined. 
 * Correctly positioned letter in correct position in word is a bull and is boldened. 
 
-Computer generated word: 
+2. Computer generated word: 
 * Choose library/dictionary to retrieve the word from. 
 * Filtering that word for duplicated letters and word size. 
 
-Invalid input: 
+3. Invalid input: 
 * If person is having a hard time selecting a word, programs generate a word. 
 * Generates a list of 3-5 words for the user to select from.  
 * User selects one by typing: <1>, <2>, <3>, <4>, <5> into console 
 
-Add a timer: 
+4. Add a timer: 
 * And a timer that tracks user time elapsed and outputs at the end of the game. 
 * Perhaps a time limit per guess? 
 
-See a 26 letter alphabet to help: 
+5. See a 26 letter alphabet to help: 
 * Shows updatable alphabet to help, crosses out letters already used 
 
-Players can enter their name at the start of the game, stored in an array, and outputted on victory/defeat screen. 
+6. Players can enter their name at the start of the game, stored in an array, and outputted on victory/defeat screen. 
 
-For 2 player game, add RNG/Coin Flip for who goes first. 
+7. For 2 player game, add RNG/Coin Flip for who goes first. 
 
-In a 2 player game, If playing again, switch starting player 
+8. In a 2 player game, If playing again, switch starting player 
 
-Users can choose the word size for the computer to generate word from 
+9. Users can choose the word size for the computer to generate word from 
 
 [^1]: A word or phrase in which each letter occurs the same number of times
