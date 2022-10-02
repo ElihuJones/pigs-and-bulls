@@ -31,11 +31,11 @@ User can choose 1 player or 2 player game.
 If 1 player is chosen: 
 
 * Computer generates word with no characters repeating, 5 characters long. 
- * Play Order: 
-  * Player inputs guesses until turns run out 
-   * Input word checked for valid input, if invalid, output invalid input and state input requirements to the user.  
-   * Program compares guess to secret: 
-    * A correctly guessed letter of the word is a Pig. 
+    * Play Order: 
+      * Player inputs guesses until turns run out 
+            * Input word checked for valid input, if invalid, output invalid input and state input requirements to the user.  
+      * Program compares guess to secret: 
+        * A correctly guessed letter of the word is a Pig. 
     * A correctly guessed and positioned letter is a Bull. 
     * Player sees their count of Pigs and Bulls. 
     * If the user guess matches the secret 
