@@ -44,7 +44,7 @@ If 1 player is chosen:
                   * they see a score screen, and what the word was. 
   * User can choose to play again or exit console. 
             
-If 2 players is chosen: 
+If 2 players are chosen: 
 * Player 1  inputs 5 letter word 
     * Input word checked for valid input, if invalid, output invalid input and state input requirements to the user.  
 * Player 2 inputs 5 letter word 
