@@ -34,14 +34,14 @@ If 1 player is chosen:
     * Play Order: 
       * Player inputs guesses until turns run out 
           * Input word checked for valid input, if invalid, output invalid input and state input requirements to the user.  
-      * Program compares guess to secret: 
-          * A correctly guessed letter of the word is a Pig. 
-          * A correctly guessed and positioned letter is a Bull. 
-          * Player sees their count of Pigs and Bulls. 
-          * If the user guess matches the secret 
-              * the user sees a congratulations message and their turn count upon matching. 
-         * If user fails to match by max count 
-              * they see a score screen, and what the word was. 
+          * Program compares guess to secret: 
+              * A correctly guessed letter of the word is a Pig. 
+              * A correctly guessed and positioned letter is a Bull. 
+              * Player sees their count of Pigs and Bulls. 
+              * If the user guess matches the secret 
+                  * the user sees a congratulations message and their turn count upon matching. 
+              * If user fails to match by max count 
+                  * they see a score screen, and what the word was. 
   * User can choose to play again or exit console. 
             
 If 2 players is chosen: 
