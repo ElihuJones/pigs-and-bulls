@@ -46,20 +46,20 @@ If 1 player is chosen:
             
 If 2 players is chosen: 
 * Player 1  inputs 5 letter word 
- * Input word checked for valid input, if invalid, output invalid input and state input requirements to the user.  
+    * Input word checked for valid input, if invalid, output invalid input and state input requirements to the user.  
 * Player 2 inputs 5 letter word 
- * Input word checked for valid input, if invalid, output invalid input and state input requirements to the user.  
+    * Input word checked for valid input, if invalid, output invalid input and state input requirements to the user.  
 * Player 1 goes first: 
- * Follow Play Order for 1 player 
+    * Follow Play Order for 1 player 
 * Player 2 goes second: 
- * Follows Play Order for 1 player 
+    * Follows Play Order for 1 player 
 * Game Victory Conditions for multiplayer 
- * If only 1 player guesses right, that player wins, Victory Message with player # 
- * If both players guess right on the same turn count, TIE Message 
- * If no player guesses correctly, compare scores: 
-  * Highest number of bulls between players wins ang gets Message 
-   * If bulls is tied, highest number of cows win 
-    * If that is tied, they tied. 
+    * If only 1 player guesses right, that player wins, Victory Message with player # 
+    * If both players guess right on the same turn count, TIE Message 
+    * If no player guesses correctly, compare scores: 
+        * Highest number of bulls between players wins ang gets Message 
+            * If bulls is tied, highest number of cows win 
+                * If that is tied, they tied. 
 * Users can choose to play again or exit console. 
 
 Concerns/Increased Scope Ideas: 
