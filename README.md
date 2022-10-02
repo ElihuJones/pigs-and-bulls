@@ -86,8 +86,11 @@ See a 26 letter alphabet to help:
 * Shows updatable alphabet to help, crosses out letters already used 
 
 Players can enter their name at the start of the game, stored in an array, and outputted on victory/defeat screen. 
+
 For 2 player game, add RNG/Coin Flip for who goes first. 
+
 In a 2 player game, If playing again, switch starting player 
+
 Users can choose the word size for the computer to generate word from 
 
 [^1]: A word or phrase in which each letter occurs the same number of times
