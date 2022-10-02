@@ -30,56 +30,56 @@ User can choose 1 player or 2 player game.
 
 If 1 player is chosen: 
 
-Markup: *Computer generates word with no characters repeating, 5 characters long. 
-          *Play Order: 
-            *Player inputs guesses until turns run out 
-              *Input word checked for valid input, if invalid, output invalid input and state input requirements to the user.  
-              *Program compares guess to secret: 
-                *A correctly guessed letter of the word is a Pig. 
-                *A correctly guessed and positioned letter is a Bull. 
-                *Player sees their count of Pigs and Bulls. 
-                *If the user guess matches the secret 
-                  *the user sees a congratulations message and their turn count upon matching. 
-                *If user fails to match by max count 
-                  *they see a score screen, and what the word was. 
-            *User can choose to play again or exit console. 
+* Computer generates word with no characters repeating, 5 characters long. 
+ * Play Order: 
+  * Player inputs guesses until turns run out 
+   * Input word checked for valid input, if invalid, output invalid input and state input requirements to the user.  
+   * Program compares guess to secret: 
+    * A correctly guessed letter of the word is a Pig. 
+    * A correctly guessed and positioned letter is a Bull. 
+    * Player sees their count of Pigs and Bulls. 
+    * If the user guess matches the secret 
+     * the user sees a congratulations message and their turn count upon matching. 
+    * If user fails to match by max count 
+     * they see a score screen, and what the word was. 
+  * User can choose to play again or exit console. 
             
 If 2 players is chosen: 
-Markup: * Player 1  inputs 5 letter word 
-          * Input word checked for valid input, if invalid, output invalid input and state input requirements to the user.  
-        * Player 2 inputs 5 letter word 
-          * Input word checked for valid input, if invalid, output invalid input and state input requirements to the user.  
-        * Player 1 goes first: 
-          * Follow Play Order for 1 player 
-        * Player 2 goes second: 
-          * Follows Play Order for 1 player 
-        * Game Victory Conditions for multiplayer 
-          * If only 1 player guesses right, that player wins, Victory Message with player # 
-          * If both players guess right on the same turn count, TIE Message 
-          * If no player guesses correctly, compare scores: 
-            * Highest number of bulls between players wins ang gets Message 
-              * If bulls is tied, highest number of cows win 
-                * If that is tied, they tied. 
-Users can choose to play again or exit console. 
+* Player 1  inputs 5 letter word 
+ * Input word checked for valid input, if invalid, output invalid input and state input requirements to the user.  
+* Player 2 inputs 5 letter word 
+ * Input word checked for valid input, if invalid, output invalid input and state input requirements to the user.  
+* Player 1 goes first: 
+ * Follow Play Order for 1 player 
+* Player 2 goes second: 
+ * Follows Play Order for 1 player 
+* Game Victory Conditions for multiplayer 
+ * If only 1 player guesses right, that player wins, Victory Message with player # 
+ * If both players guess right on the same turn count, TIE Message 
+ * If no player guesses correctly, compare scores: 
+  * Highest number of bulls between players wins ang gets Message 
+   * If bulls is tied, highest number of cows win 
+    * If that is tied, they tied. 
+* Users can choose to play again or exit console. 
 
 Concerns/Increased Scope Ideas: 
 -------------------------------
 
 Formatted strings for user's ease in a console environment between windows & mac:  
-Markup: * Correctly positioned letter in word is a pig and underlined. 
-        * Correctly positioned letter in correct position in word is a bull and is boldened. 
+* Correctly positioned letter in word is a pig and underlined. 
+* Correctly positioned letter in correct position in word is a bull and is boldened. 
 Computer generated word: 
-Markup: * Choose library/dictionary to retrieve the word from. 
-        * Filtering that word for duplicated letters and word size. 
+* Choose library/dictionary to retrieve the word from. 
+* Filtering that word for duplicated letters and word size. 
 Invalid input: 
-Markup: * If person is having a hard time selecting a word, programs generate a word. 
-          * Generates a list of 3-5 words for the user to select from.  
-          * User selects one by typing: <1>, <2>, <3>, <4>, <5> into console 
+* If person is having a hard time selecting a word, programs generate a word. 
+* Generates a list of 3-5 words for the user to select from.  
+* User selects one by typing: <1>, <2>, <3>, <4>, <5> into console 
 Add a timer: 
-Markup: * And a timer that tracks user time elapsed and outputs at the end of the game. 
-          * Perhaps a time limit per guess? 
+* And a timer that tracks user time elapsed and outputs at the end of the game. 
+* Perhaps a time limit per guess? 
 See a 26 letter alphabet to help: 
-Markup: * Shows updatable alphabet to help, crosses out letters already used 
+* Shows updatable alphabet to help, crosses out letters already used 
 Players can enter their name at the start of the game, stored in an array, and outputted on victory/defeat screen. 
 For 2 player game, add RNG/Coin Flip for who goes first. 
 In a 2 player game, If playing again, switch starting player 
