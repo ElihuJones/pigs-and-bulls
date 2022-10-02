@@ -31,7 +31,7 @@ User can choose 1 player or 2 player game.
 If 1 player is chosen: 
 
 * Computer generates word with no characters repeating, 5 characters long. 
-    *** Play Order**: 
+    * ** Play Order**: 
       * Player inputs guesses until turns run out (currently 5, the length of the word)
       
           * Input word checked for valid input, if invalid, output invalid input and state input requirements to the user.  
