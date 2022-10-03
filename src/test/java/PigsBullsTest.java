@@ -1,9 +1,10 @@
+import static org.junit.jupiter.api.Assertions.*;
+
 import org.junit.jupiter.api.Test;
 
-public class PigsBullsTest {
+class PigsBullsTest {
 
   @Test
   void main() {
-
   }
 }
