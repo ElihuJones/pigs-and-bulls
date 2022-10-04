@@ -6,7 +6,7 @@ import java.io.Reader;
 public class PigsBulls {
 
   public static int turnCounter;
-  public static final String secret = "WHILE";
+  public static String secret;
 
 
   public static void main(String[] args) {
@@ -21,6 +21,7 @@ public class PigsBulls {
   public static void countBullsAndPigs() throws IOException {
     Reader reader = new InputStreamReader(System.in);
     BufferedReader buffer = new BufferedReader(reader);
+    String secret = WordList.generateRandomWord().toString();
     int bulls = 0;
     int pigs = 0;
 
