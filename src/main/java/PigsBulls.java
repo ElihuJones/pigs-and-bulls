@@ -9,7 +9,6 @@ public class PigsBulls {
   public static String secret;
 
   public static void main(String[] args) {
-    System.out.println("Welcome, let's start a game!");
     try {
       countBullsAndPigs();
     } catch (IOException e) {
@@ -23,7 +22,7 @@ public class PigsBulls {
     String secret = WordList.generateRandomWord().toString();
     int bulls = 0;
     int pigs = 0;
-
+    System.out.println("Welcome to the Pigs and Bulls game!");
     while (turnCounter < 5) {
       String guess = null;
       do {
@@ -57,11 +56,23 @@ public class PigsBulls {
       } else if (bulls == 0 && pigs > 0) {
         System.out.println("# Turn: " + turnCounter + "  Pig(s): " + pigs);
       } else if (bulls == secret.length()) {
-        System.out.println("$ Turn: " + turnCounter + "  Bull(s): " + bulls);
-        System.out.println("Congratulations! You guessed the secret code.");
-        return;
+        do {
+          System.out.println("$ Turn: " + turnCounter + "  Bull(s): " + bulls);
+          System.out.println("Congratulations! You guessed the secret code.");
+          System.out.println("Would you like to play again?");
+          try {
+            guess = buffer.readLine().toUpperCase().trim();
+            if (guess.matches("^['Y']{1}$")) {
+              countBullsAndPigs();
+            } else {
+              return;
+            }
+          } catch (IOException nothing) {
+            //do nothing
+          }
+        } while (guess == "Y");
       } else {
-        System.out.println("% Result: no, fail, bye.");
+        System.out.println("% Result: No matches.");
       }
       bulls = 0;
       pigs = 0;
