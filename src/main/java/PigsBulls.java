@@ -8,12 +8,13 @@ public class PigsBulls {
   public static int turnCounter;
   public static final String secret = "WHILE";
 
+
   public static void main(String[] args) {
     System.out.println("Welcome, let's start a game!");
     try {
       countBullsAndPigs();
     } catch (IOException e) {
-      System.out.println("Cannot Read Input, Game Over!");
+      System.out.println("Can't read Input, Game Over!");
     }
   }
 
@@ -26,7 +27,7 @@ public class PigsBulls {
     while (turnCounter < 5) {
       String guess = null;
       do {
-        System.out.println("Please Enter A 5 Letter Word");
+        System.out.println("Please enter a 5 letter word");
         try {
           guess = buffer.readLine().toUpperCase().trim();
           if (guess.matches("^[A-Z]{5}$")) {
@@ -38,7 +39,6 @@ public class PigsBulls {
           System.out.println("Invalid Input!");
         }
       } while (true);
-      System.out.println("Please enter a 5 letter word");
       for (int i = 0; i < guess.length(); i++) {
         if (guess.charAt(i) == secret.charAt(i)) {
           bulls++;
