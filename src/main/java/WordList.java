@@ -12,21 +12,8 @@ public enum WordList {
   HANDS,
   BLANK;
 
-
-  public static SecretWords generateRandomWord() {
-    SecretWords[] values = SecretWords.values();
-    int length = values.length;
-    int randomWord = new Random().nextInt(length);
-    return values[randomWord];
-  }
-
-  private final String secret;
-
-  WordList(String secret) {
-    this.secret = secret;
-  }
-
-  public String secret() {
-    return secret;
+  public static WordList generateRandomWord() {
+    Random random = new Random();
+    return values()[random.nextInt(values().length)];
   }
 }
