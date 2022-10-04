@@ -8,7 +8,6 @@ public class PigsBulls {
   public static int turnCounter;
   public static String secret;
 
-
   public static void main(String[] args) {
     System.out.println("Welcome, let's start a game!");
     try {
@@ -28,7 +27,7 @@ public class PigsBulls {
     while (turnCounter < 5) {
       String guess = null;
       do {
-        System.out.println("Please enter a 5 letter word");
+        System.out.println("Please Enter A 5 Letter Word");
         try {
           guess = buffer.readLine().toUpperCase().trim();
           if (guess.matches("^[A-Z]{5}$")) {
