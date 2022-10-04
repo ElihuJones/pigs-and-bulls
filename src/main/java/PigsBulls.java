@@ -6,20 +6,21 @@ import java.io.Reader;
 public class PigsBulls {
 
   public static int turnCounter;
-  public static final String secret = "WHILE";
+  public static String secret;
 
   public static void main(String[] args) {
     System.out.println("Welcome, let's start a game!");
     try {
       countBullsAndPigs();
     } catch (IOException e) {
-      System.out.println("Cannot Read Input, Game Over!");
+      System.out.println("Can't read Input, Game Over!");
     }
   }
 
   public static void countBullsAndPigs() throws IOException {
     Reader reader = new InputStreamReader(System.in);
     BufferedReader buffer = new BufferedReader(reader);
+    String secret = WordList.generateRandomWord().toString();
     int bulls = 0;
     int pigs = 0;
 
@@ -38,7 +39,6 @@ public class PigsBulls {
           System.out.println("Invalid Input!");
         }
       } while (true);
-      System.out.println("Please enter a 5 letter word");
       for (int i = 0; i < guess.length(); i++) {
         if (guess.charAt(i) == secret.charAt(i)) {
           bulls++;

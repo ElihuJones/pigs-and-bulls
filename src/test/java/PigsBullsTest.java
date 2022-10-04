@@ -6,15 +6,18 @@ import org.junit.jupiter.api.Test;
 class PigsBullsTest {
 
   @Test
-
-  public class testCountBullsAndPigs() {
-    Scanner scanner = new Scanner(System.in);
-
+  void countBullsAndPigs() {
     String msg = "WHILE";
+    assertEquals(5, msg.length());
+    assertTrue(5 == msg.length());
+  }
 
-
-
-
+  @Test
+  void secretWord() {
+    int expected = 5;
+    public class testCountBullsAndPigs() {
+    Scanner scanner = new Scanner(System.in);
+    String msg = "WHILE";
 
 
     // TODO Create test program edge cases (i.e - < or > than 5 letters, double letters, symbols, following ASCII - Uppercase: 65 to 90; Lowercase: 97 to 122).
@@ -33,5 +36,4 @@ class PigsBullsTest {
 
     // Todo TBD
   }
-
 }
