@@ -26,6 +26,9 @@ public class PigsBulls {
     messages.displayInstructions();
     messages.displayMessageProvideFiveCharacters();
 
+    //FIXME
+    pigsBulls.setSecret();
+
     do {
       flag = pigsBulls.checkCharacters();
     } while (!flag);
@@ -106,7 +109,7 @@ public class PigsBulls {
   }
 
   void setSecret() {
-    //secret = "WHILE";
+    secret = "WHILE";
     //create an instance of the WordList class, and then invoking a method on it.
     //WordList wordList = new WordList();
     //secret = wordList.generateRandomWord().toString();
