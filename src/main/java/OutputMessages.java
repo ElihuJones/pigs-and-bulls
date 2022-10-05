@@ -24,7 +24,7 @@ public class OutputMessages {
   }
 
   void displayMessageProvideFiveCharacters(){
-    System.out.println("Provide 5 Characters");
+    System.out.println("Please enter a 5 letter word");
   }
 
   void displayBullsAndPigs(int bulls, int pigs){
