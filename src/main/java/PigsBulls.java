@@ -72,7 +72,7 @@ public class PigsBulls {
   }
 
   private boolean getResult() {
-    if (turnCounter == 5) {
+    if (turnCounter == 11) {
       messages.displayBullsAndPigs(bulls, pigs);
       messages.displayNoMoreTurnsLeft();
       messages.displaySecret(secret);
