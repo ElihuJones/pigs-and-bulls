@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class OutputMessages {
 
   void displayLogo() {
@@ -15,15 +17,21 @@ public class OutputMessages {
         " You will have 5 guesses to find the secret word. Good Luck! \n");
   }
 
-  void displayTheEnd() {
-    System.out.println("Congratulations! You guessed the code!");
+  String inputUsername() {
+    System.out.println("Enter a username:");
+    Scanner keyboardInput = new Scanner(System.in);
+    return keyboardInput.nextLine();
   }
 
-  void displayPlayAgain(){
-    System.out.println("Would you like to play again?");
+  void inputTheEnd(String username) {
+    System.out.println("Congratulations " + username + " !" + " You guessed the code!");
   }
 
-  void displayMessageProvideFiveCharacters(){
+  void inputPlayAgain(String username){
+    System.out.println("Hey " + username + "!" + " Would you like to play again?");
+  }
+
+  void inputMessageProvideFiveCharacters(){
     System.out.println("Please enter a 5 letter word");
   }
 
@@ -31,12 +39,12 @@ public class OutputMessages {
     System.out.println(" Bull(s): " + bulls + " Pig(s): " + pigs);
   }
 
-  void displayNoMoreAttemptsLeft() {
-    System.out.println("Sorry, there are no more attempts left: game ended!");
+  void inputNoMoreAttemptsLeft(String username) {
+    System.out.println("Sorry, " + username + " there are no more attempts left: game ended!");
   }
 
   void displayAttempts(int attempts) {
-    System.out.print("Turn: " + attempts + 1 + "/5: ");
+    System.out.print("Turn: " + attempts + "/5: ");
   }
 
   void displaySecret(String Secret) {
