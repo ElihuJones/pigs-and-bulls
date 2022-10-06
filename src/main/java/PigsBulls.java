@@ -16,6 +16,7 @@ public class PigsBulls {
   private static int turnCounter = 1;
   private int bulls;
   private int pigs;
+  public String userName;
   public static final int NUMBER_OF_CHARACTERS = 5;
 
 
@@ -23,6 +24,7 @@ public class PigsBulls {
       boolean checkValid;
       messages.displayLogo();
       messages.displayInstructions();
+      pigsBulls.userName = messages.inputUserName();
       messages.displayMessageProvideFiveCharacters();
       pigsBulls.setSecret();
 
@@ -61,11 +63,11 @@ public class PigsBulls {
   private boolean getResult() {
     if (turnCounter == 11) {
       messages.displayBullsAndPigs(bulls, pigs);
-      messages.displayNoMoreTurnsLeft();
+      messages.displayNoMoreTurnsLeft(userName);
       messages.displaySecret(secret);
       return true;
     } else if (bulls == NUMBER_OF_CHARACTERS) {
-      messages.displayTheEnd();
+      messages.displayTheEnd(userName);
       return true;
     } else {
       messages.displayBullsAndPigs(bulls, pigs);
@@ -93,8 +95,49 @@ public class PigsBulls {
     validateUserInput.checkUndersizedWord(userInput);
   }
 
+  private boolean verifyUserNameInput() {
+    try {
+      messages.inputUserName();
+      userName = buffer.readLine().trim();
+      checkUserName(userName);
+      return true;
+    } catch (IllegalArgumentException | IOException e) {
+      System.out.println("Invalid Username");
+    }
+    return false;
+  }
+
+  private void checkUserName(String userInput) {
+    validateUserInput.checkForCharacterInput(userInput);
+  }
+
   void setSecret() throws URISyntaxException, IOException {
+    //secret = "WHILE";
+    //create an instance of the WordList class, and then invoking a method on it.
     WordList wordList = new WordList();
     secret = wordList.generateRandomWord();
   }
+
+
+
+  /*  public static void playAgain() {
+    Reader reader = new InputStreamReader(System.in);
+    BufferedReader buffer = new BufferedReader(reader);
+    String userInput = null;
+    do {
+      System.out.println("Would you like to play again?");
+      try {
+        userInput = buffer.readLine().toUpperCase().trim();
+        if (userInput.matches("^['Y']{1}$")) {
+          turnCounter = 0;
+          main();
+        } else {
+          turnCounter = 0;
+        }
+      } catch (IOException nothing) {
+        //do nothing
+      }
+    } while (userInput == "Y");
+  }*/
+
 }

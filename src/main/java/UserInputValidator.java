@@ -18,4 +18,9 @@ class UserInputValidator {
       throw new IllegalArgumentException("You can provide only characters!");
     }
   }
+    void checkForUsernameInput(String username) {
+      if (!username.matches("^[A-Z]$") && username.length() <= 23) {
+        throw new IllegalArgumentException("You can provide only characters!");
+      }
+  }
 }
