@@ -15,14 +15,6 @@ public class OutputMessages {
         " You will have 5 guesses to find the secret word. Good Luck! \n");
   }
 
-  void displayTheEnd() {
-    System.out.println("Congratulations! You guessed the code!");
-  }
-
-  void displayPlayAgain(){
-    System.out.println("Would you like to play again?");
-  }
-
   void displayMessageProvideFiveCharacters(){
     System.out.println("Please enter a 5 letter word");
   }
@@ -31,15 +23,23 @@ public class OutputMessages {
     System.out.println(" Bull(s): " + bulls + " Pig(s): " + pigs);
   }
 
-  void displayNoMoreAttemptsLeft() {
-    System.out.println("Sorry, there are no more attempts left: game ended!");
+  void displayTurns(int turnCounter) {
+    System.out.print("Turn: " + turnCounter + "/5: ");
   }
 
-  void displayAttempts(int attempts) {
-    System.out.print("Turn: " + attempts + 1 + "/5: ");
+  void displayNoMoreTurnsLeft() {
+    System.out.println("Sorry, there are no more turns left: game ended!");
   }
 
   void displaySecret(String Secret) {
     System.out.println("The secret word was: " + Secret);
+  }
+
+  void displayTheEnd() {
+    System.out.println("Congratulations! + You guessed the code!");
+  }
+
+  void displayPlayAgain(){
+    System.out.println("Would you like to play again?");
   }
 }
