@@ -4,54 +4,37 @@ import java.io.InputStreamReader;
 import java.io.Reader;
 import java.net.URISyntaxException;
 
-
 public class PigsBulls {
 
-  static final int NUMBER_OF_CHARACTERS = 5;
-  private final Reader reader = new InputStreamReader(System.in);
-  private final BufferedReader buffer = new BufferedReader(reader);
-  private final UserInputValidator validateUserInput = new UserInputValidator();
-  private final OutputMessages messages;
+  private static final Reader reader = new InputStreamReader(System.in);
+  private static final BufferedReader buffer = new BufferedReader(reader);
+  private static final UserInputValidator validateUserInput = new UserInputValidator();
+  private static OutputMessages messages = new OutputMessages();
+  private static PigsBulls pigsBulls = new PigsBulls(messages);
+  private static String secret;
+  private static String userString;
   private static int turnCounter = 1;
-  private String userString;
-  public String username;
-  private String secret;
   private int bulls;
   private int pigs;
+  public String userName;
+  public static final int NUMBER_OF_CHARACTERS = 5;
+
 
   public static void main(String[] args) throws URISyntaxException, IOException {
+      boolean checkValid;
+      messages.displayLogo();
+      messages.displayInstructions();
+      pigsBulls.userName = messages.inputUserName();
+      messages.displayMessageProvideFiveCharacters();
+      pigsBulls.setSecret();
 
-    boolean flag;
-    OutputMessages messages = new OutputMessages();
-    PigsBulls pigsBulls = new PigsBulls(messages);
-
-    messages.displayLogo();
-    messages.displayInstructions();
-    pigsBulls.username = messages.inputUsername();
-
-//    do {
-//      usernameFlag = pigsBulls.verifyUsernameInput()
-//    } while ();
-
-
-    messages.inputMessageProvideFiveCharacters();
-    pigsBulls.setSecret();
-
-    do {
-      flag = pigsBulls.checkCharacters();
-    } while (!flag);
+      do {
+        checkValid = pigsBulls.checkCharacters();
+      } while (!checkValid);
   }
 
   PigsBulls(OutputMessages messages) {
     this.messages = messages;
-    //getSecret();
-  }
-
-  private void username() {
-    messages.inputUsername();
-    if (verifyUsernameInput()) {
-
-    }
   }
 
   boolean checkCharacters() {
@@ -62,21 +45,11 @@ public class PigsBulls {
   }
 
   private boolean checkMatches() {
-    countBullsAndPigs();
+    countPigsAndBulls();
     return getResult();
   }
 
-  void countBullsAndPigs() {
-/*    for (int i = 0; i < userString.length(); i++) {
-      if (userString.charAt(i) == secret.charAt(i)) {
-        bulls++;
-        for (int j = 0; j < secret.length(); j++) {
-          if (userString.charAt(j) == secret.charAt(i) && i != j) {
-            pigs++;
-          }
-        }
-      }
-    }*/
+  void countPigsAndBulls() {
     for (int i = 0; i < NUMBER_OF_CHARACTERS; i++) {
       if (userString.charAt(i) == secret.charAt(i)) {
         bulls++;
@@ -88,13 +61,13 @@ public class PigsBulls {
   }
 
   private boolean getResult() {
-    if (turnCounter == 5) {
+    if (turnCounter == 11) {
       messages.displayBullsAndPigs(bulls, pigs);
-      messages.inputNoMoreAttemptsLeft(username);
+      messages.displayNoMoreTurnsLeft(userName);
       messages.displaySecret(secret);
       return true;
     } else if (bulls == NUMBER_OF_CHARACTERS) {
-      messages.inputTheEnd(username);
+      messages.displayTheEnd(userName);
       return true;
     } else {
       messages.displayBullsAndPigs(bulls, pigs);
@@ -106,7 +79,7 @@ public class PigsBulls {
 
   private boolean verifyOnlyCharInput() {
     try {
-      messages.displayAttempts(turnCounter);
+      messages.displayTurns(turnCounter);
       userString = buffer.readLine().toUpperCase().trim();
       checkUserInput(userString);
       return true;
@@ -122,11 +95,11 @@ public class PigsBulls {
     validateUserInput.checkUndersizedWord(userInput);
   }
 
-  private boolean verifyUsernameInput() {
+  private boolean verifyUserNameInput() {
     try {
-      messages.inputUsername();
-      username = buffer.readLine().trim();
-      checkUsername(username);
+      messages.inputUserName();
+      userName = buffer.readLine().trim();
+      checkUserName(userName);
       return true;
     } catch (IllegalArgumentException | IOException e) {
       System.out.println("Invalid Username");
@@ -134,7 +107,7 @@ public class PigsBulls {
     return false;
   }
 
-  private void checkUsername(String userInput) {
+  private void checkUserName(String userInput) {
     validateUserInput.checkForCharacterInput(userInput);
   }
 
@@ -145,21 +118,7 @@ public class PigsBulls {
     secret = wordList.generateRandomWord();
   }
 
-  void setUserString(String userString) {
-    this.userString = userString;
-  }
 
-  int getBulls() {
-    return bulls;
-  }
-
-  int getPigs() {
-    return pigs;
-  }
-
-  String getSecret() {
-    return secret;
-  }
 
   /*  public static void playAgain() {
     Reader reader = new InputStreamReader(System.in);
