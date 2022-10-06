@@ -13,19 +13,19 @@ public class OutputMessages {
         "Example: Secret: WHILE      Player Guess: WATER \n" +
         "Turn: 1/10: WATER \n" +
         " Bull(s): 1 Pig(s): 0. The W is a bull, the E is a pig. \n\n" +
-        " You will have 10 guesses to find the secret word. Good Luck! \n\n");
+        " You will have 10 guesses to find the secret word. Good Luck! \n");
   }
 
   void displayMessageProvideFiveCharacters(){
     System.out.println("Please enter a 5 letter word");
   }
 
-  void displayBullsAndPigs(int bulls, int pigs){
-    System.out.println(" Bull(s): " + bulls + " Pig(s): " + pigs);
-  }
-
   void displayTurns(int turnCounter) {
     System.out.print("Turn: " + turnCounter + "/10: ");
+  }
+
+  void displayBullsAndPigs(int bulls, int pigs){
+    System.out.println(" Bull(s): " + bulls + " Pig(s): " + pigs);
   }
 
   void displayNoMoreTurnsLeft() {
@@ -38,9 +38,5 @@ public class OutputMessages {
 
   void displayTheEnd() {
     System.out.println("Congratulations! You guessed the secret word!");
-  }
-
-  void displayPlayAgain(){
-    System.out.println("Would you like to play again?");
   }
 }
