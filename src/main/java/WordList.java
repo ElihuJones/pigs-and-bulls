@@ -27,7 +27,7 @@ public class WordList {
         .lines(path)
         .map(String::trim)
         .filter((word) -> !word.isEmpty())
-        .map(String:: toUpperCase)
+        .map(String::toUpperCase)
         .collect(Collectors.toList());
     rng = new Random();
   }
