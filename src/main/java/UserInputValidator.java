@@ -18,10 +18,4 @@ class UserInputValidator {
       throw new IllegalArgumentException("You can provide only characters!");
     }
   }
-
-  void checkForPlayAgain(String userInput){
-    if (!userInput.matches("^[Y]$") || userInput.matches("^[N]$")){
-      throw new IllegalArgumentException("Please type Y or N");
-    }
-  }
 }
