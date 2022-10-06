@@ -6,14 +6,14 @@ import java.net.URISyntaxException;
 
 public class PigsBulls {
 
-  static final int NUMBER_OF_CHARACTERS = 5;
-  private final Reader reader = new InputStreamReader(System.in);
-  private final BufferedReader buffer = new BufferedReader(reader);
-  private final UserInputValidator validateUserInput = new UserInputValidator();
+  private static final Reader reader = new InputStreamReader(System.in);
+  private static final BufferedReader buffer = new BufferedReader(reader);
+  private static final UserInputValidator validateUserInput = new UserInputValidator();
   private final OutputMessages messages;
   private static int turnCounter = 1;
-  private String userString;
-  private String secret;
+  private static String secret;
+  private static String userString;
+  public static final int NUMBER_OF_CHARACTERS = 5;
   private int bulls;
   private int pigs;
 
@@ -45,12 +45,12 @@ public class PigsBulls {
   }
 
   private boolean checkMatches() {
-    countBullsAndPigs();
+    countPigsAndBulls();
     return getResult();
   }
 
-  void countBullsAndPigs() {
-/*    for (int i = 0; i < userString.length(); i++) {
+  void countPigsAndBulls() {
+    for (int i = 0; i < userString.length(); i++) {
       if (userString.charAt(i) == secret.charAt(i)) {
         bulls++;
         for (int j = 0; j < secret.length(); j++) {
@@ -58,14 +58,6 @@ public class PigsBulls {
             pigs++;
           }
         }
-      }
-    }*/
-    for (int i = 0; i < NUMBER_OF_CHARACTERS; i++) {
-      if (userString.charAt(i) == secret.charAt(i)) {
-        bulls++;
-      }
-      else if (secret.contains(userString.charAt(i) + "")) {
-        pigs++;
       }
     }
     turnCounter++;
@@ -79,6 +71,7 @@ public class PigsBulls {
       return true;
     } else if (bulls == NUMBER_OF_CHARACTERS) {
       messages.displayTheEnd();
+      messages.displayPlayAgain();
       return true;
     } else {
       messages.displayBullsAndPigs(bulls, pigs);
@@ -106,25 +99,13 @@ public class PigsBulls {
     validateUserInput.checkUndersizedWord(userInput);
   }
 
+  private void checkForPlayAgain(String userInput) {
+    validateUserInput.checkForPlayAgain(userInput);
+  }
+
   void setSecret() throws URISyntaxException, IOException {
     WordList wordList = new WordList();
     secret = wordList.generateRandomWord();
-  }
-
-  void setUserString(String userString){
-    this.userString = userString;
-  }
-
-  int getBulls() {
-    return bulls;
-  }
-
-  int getPigs() {
-    return pigs;
-  }
-
-  String getSecret() {
-    return secret;
   }
 
   /*  public static void playAgain() {
