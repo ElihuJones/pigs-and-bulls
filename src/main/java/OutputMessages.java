@@ -13,8 +13,9 @@ public class OutputMessages {
         "If a character matches and is in the right position, they are \"bulls\"\n" +
         "If a character matches but in a different position, they are \"pigs\"\n\n" +
         "Example: Secret: WHILE      Player Guess: WATER \n" +
-        "Result: 1 bull(s) 1 pig(s). The W is a bull, the E is a pig \n " +
-        " You will have 5 guesses to find the secret word. Good Luck! \n");
+        "Turn: 1/10: WATER \n" +
+        " Bull(s): 1 Pig(s): 0. The W is a bull, the E is a pig. \n\n" +
+        " You will have 10 guesses to find the secret word. Good Luck! \n");
   }
 
   String inputUserName() {
