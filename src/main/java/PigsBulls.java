@@ -9,28 +9,26 @@ public class PigsBulls {
   private static final Reader reader = new InputStreamReader(System.in);
   private static final BufferedReader buffer = new BufferedReader(reader);
   private static final UserInputValidator validateUserInput = new UserInputValidator();
-  private final OutputMessages messages;
-  private static int turnCounter = 1;
+  private static OutputMessages messages = new OutputMessages();
+  private static PigsBulls pigsBulls = new PigsBulls(messages);
   private static String secret;
   private static String userString;
-  public static final int NUMBER_OF_CHARACTERS = 5;
+  private static int turnCounter = 1;
   private int bulls;
   private int pigs;
+  public static final int NUMBER_OF_CHARACTERS = 5;
+
 
   public static void main(String[] args) throws URISyntaxException, IOException {
+      boolean checkValid;
+      messages.displayLogo();
+      messages.displayInstructions();
+      messages.displayMessageProvideFiveCharacters();
+      pigsBulls.setSecret();
 
-    boolean flag;
-    OutputMessages messages = new OutputMessages();
-    PigsBulls pigsBulls = new PigsBulls(messages);
-
-    messages.displayLogo();
-    messages.displayInstructions();
-    messages.displayMessageProvideFiveCharacters();
-    pigsBulls.setSecret();
-
-    do {
-      flag = pigsBulls.checkCharacters();
-    } while (!flag);
+      do {
+        checkValid = pigsBulls.checkCharacters();
+      } while (!checkValid);
   }
 
   PigsBulls(OutputMessages messages) {
@@ -50,14 +48,11 @@ public class PigsBulls {
   }
 
   void countPigsAndBulls() {
-    for (int i = 0; i < userString.length(); i++) {
+    for (int i = 0; i < NUMBER_OF_CHARACTERS; i++) {
       if (userString.charAt(i) == secret.charAt(i)) {
         bulls++;
-        for (int j = 0; j < secret.length(); j++) {
-          if (userString.charAt(j) == secret.charAt(i) && i != j) {
-            pigs++;
-          }
-        }
+      } else if (secret.contains(userString.charAt(i) + "")) {
+        pigs++;
       }
     }
     turnCounter++;
@@ -71,7 +66,6 @@ public class PigsBulls {
       return true;
     } else if (bulls == NUMBER_OF_CHARACTERS) {
       messages.displayTheEnd();
-      messages.displayPlayAgain();
       return true;
     } else {
       messages.displayBullsAndPigs(bulls, pigs);
@@ -99,33 +93,8 @@ public class PigsBulls {
     validateUserInput.checkUndersizedWord(userInput);
   }
 
-  private void checkForPlayAgain(String userInput) {
-    validateUserInput.checkForPlayAgain(userInput);
-  }
-
   void setSecret() throws URISyntaxException, IOException {
     WordList wordList = new WordList();
     secret = wordList.generateRandomWord();
   }
-
-  /*  public static void playAgain() {
-    Reader reader = new InputStreamReader(System.in);
-    BufferedReader buffer = new BufferedReader(reader);
-    String userInput = null;
-    do {
-      System.out.println("Would you like to play again?");
-      try {
-        userInput = buffer.readLine().toUpperCase().trim();
-        if (userInput.matches("^['Y']{1}$")) {
-          turnCounter = 0;
-          main();
-        } else {
-          turnCounter = 0;
-        }
-      } catch (IOException nothing) {
-        //do nothing
-      }
-    } while (userInput == "Y");
-  }*/
-
 }
