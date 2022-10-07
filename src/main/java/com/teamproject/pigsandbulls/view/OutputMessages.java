@@ -1,7 +1,5 @@
 package com.teamproject.pigsandbulls.view;
 
-import java.util.Scanner;
-
 public class OutputMessages {
 
   public void displayTitle() {
@@ -18,12 +16,6 @@ public class OutputMessages {
         "Turn: 1/10: WATER \n" +
         " Bull(s): 1 Pig(s): 0. The W is a bull, the E is a pig. \n\n" +
         " You will have 10 guesses to find the secret word. Good Luck! \n");
-  }
-
-  public String inputUserName() {
-    System.out.println("Enter a username:");
-    Scanner keyboardInput = new Scanner(System.in);
-    return keyboardInput.nextLine();
   }
 
   public void askUserForGuess() {

@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.Reader;
 import java.net.URISyntaxException;
+import java.util.Scanner;
 
 public class PigsBulls {
 
@@ -27,7 +28,7 @@ public class PigsBulls {
   public static void main(String[] args) throws URISyntaxException, IOException {
     boolean checkCharacterValid;
     messages.displayTitle();
-    pigsBulls.userName = messages.inputUserName();
+    pigsBulls.userName = inputUserName();
     pigsBulls.setSecret();
     messages.displayInstructions();
     messages.askUserForGuess();
@@ -39,6 +40,12 @@ public class PigsBulls {
 
   PigsBulls(OutputMessages messages) {
     this.messages = messages;
+  }
+
+  public static String inputUserName() {
+    System.out.println("Enter a username:");
+    Scanner keyboardInput = new Scanner(System.in);
+    return keyboardInput.nextLine();
   }
 
   boolean checkCharacters() {
@@ -65,7 +72,7 @@ public class PigsBulls {
   }
 
   private boolean gameController() {
-    if (turnCounter >= 10) {
+    if (turnCounter > 10) {
       messages.displayBullsAndPigs(bulls, pigs);
       messages.displayNoMoreTurnsLeft(userName);
       messages.displaySecret(secret);
