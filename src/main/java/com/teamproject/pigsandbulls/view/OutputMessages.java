@@ -1,7 +1,5 @@
 package com.teamproject.pigsandbulls.view;
 
-import java.util.Scanner;
-
 public class OutputMessages {
 
   public void displayTitle() {
@@ -20,12 +18,6 @@ public class OutputMessages {
         " You will have 10 guesses to find the secret word. Good Luck! \n");
   }
 
-  public String inputUserName() {
-    System.out.println("Enter a username:");
-    Scanner keyboardInput = new Scanner(System.in);
-    return keyboardInput.nextLine();
-  }
-
   public void askUserForGuess() {
     System.out.println("Please enter a 5 letter word");
   }
@@ -39,7 +31,7 @@ public class OutputMessages {
   }
 
   public void displayNoMoreTurnsLeft(String userName) {
-    System.out.println("Sorry, " + userName + ", there are no more attempts left: game ended!");
+    System.out.println("Sorry " + userName + "! There are no more attempts left: game ended!");
   }
 
   public void displaySecret(String secret) {

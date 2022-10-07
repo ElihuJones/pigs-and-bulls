@@ -18,7 +18,7 @@ public class WordList {
     @SuppressWarnings("ConstantConditions")
     URI uri = getClass()
         .getClassLoader()
-        .getResource("sgb-words.txt")
+        .getResource("words-list.txt")
         .toURI();
     Path path = Path.of(uri);
     words = Files
@@ -30,6 +30,7 @@ public class WordList {
     rng = new Random();
   }
 
+  // Generate a random word from the text file and return it for setSecret in main to utilize
   public String generateRandomWord() {
     return words.get(rng.nextInt(words.size()));
   }
