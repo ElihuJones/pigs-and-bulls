@@ -31,7 +31,7 @@ public class OutputMessages {
   }
 
   public void displayNoMoreTurnsLeft(String userName) {
-    System.out.println("Sorry, " + userName + ", there are no more attempts left: game ended!");
+    System.out.println("Sorry " + userName + "! There are no more attempts left: game ended!");
   }
 
   public void displaySecret(String secret) {

@@ -30,6 +30,7 @@ public class WordList {
     rng = new Random();
   }
 
+  // Generate a random word from the text file and return it for setSecret in main to utilize
   public String generateRandomWord() {
     return words.get(rng.nextInt(words.size()));
   }

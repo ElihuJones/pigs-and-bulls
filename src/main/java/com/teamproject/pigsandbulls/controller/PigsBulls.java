@@ -25,6 +25,7 @@ public class PigsBulls {
   public String userName;
   public static final int NUMBER_OF_CHARACTERS = 5;
 
+  // main function that handles the flow of the game
   public static void main(String[] args) throws URISyntaxException, IOException {
     boolean checkCharacterValid;
     messages.displayTitle();
@@ -33,6 +34,7 @@ public class PigsBulls {
     messages.displayInstructions();
     messages.askUserForGuess();
 
+    // Stay in loop until user provides a valid guess or completes the game.
     do {
       checkCharacterValid = pigsBulls.checkCharacters();
     } while (!checkCharacterValid);
@@ -42,12 +44,14 @@ public class PigsBulls {
     this.messages = messages;
   }
 
+  // Take the user's name and store it, to be used in Output messages
   public static String inputUserName() {
     System.out.println("Enter a username:");
     Scanner keyboardInput = new Scanner(System.in);
     return keyboardInput.nextLine();
   }
 
+  // If check matches is false, ask user for a user guess in main method
   boolean checkCharacters() {
     if (verifyInputIsValid()) {
       return checkMatches();
@@ -55,11 +59,14 @@ public class PigsBulls {
     return false;
   }
 
+  /* Check user guess against the guess, sends count of matches to gameController
+  * If game controller sees a victory or game loss, return true, else return false*/
   private boolean checkMatches() {
     countPigsAndBulls();
     return gameController();
   }
 
+  // Calculates the count of bulls and pigs
   void countPigsAndBulls() {
     for (int i = 0; i < NUMBER_OF_CHARACTERS; i++) {
       if (userGuess.charAt(i) == secret.charAt(i)) {
@@ -71,16 +78,20 @@ public class PigsBulls {
     turnCounter++;
   }
 
+  // Controls the game victory, loss, and continue conditions
   private boolean gameController() {
+    // If user runs out of turns, end game
     if (turnCounter > 10) {
       messages.displayBullsAndPigs(bulls, pigs);
       messages.displayNoMoreTurnsLeft(userName);
       messages.displaySecret(secret);
       return true;
+      // If user's guess matches secret, end game with a victory message
     } else if (bulls == NUMBER_OF_CHARACTERS) {
       messages.displayWinner(userName);
       return true;
     } else {
+      // If the user still has turns and hasn't guessed the secret, return to check user guess
       messages.displayBullsAndPigs(bulls, pigs);
       bulls = 0;
       pigs = 0;
@@ -88,6 +99,7 @@ public class PigsBulls {
     }
   }
 
+  // call checkUserInput function to verify user's guess
   private boolean verifyInputIsValid() {
     try {
       messages.displayTurns(turnCounter);
@@ -100,12 +112,14 @@ public class PigsBulls {
     return false;
   }
 
+  // Call exceptions functions to check user's guess
   private void checkUserInput(String userGuess) {
     validateUserInput.checkForCharacterInput(userGuess);
     validateUserInput.checkOversizedWord(userGuess);
     validateUserInput.checkUndersizedWord(userGuess);
   }
 
+  // Set the secret by invoking the generateRandomWord method from WordList
   void setSecret() throws URISyntaxException, IOException {
     WordList wordList = new WordList();
     secret = wordList.generateRandomWord();
