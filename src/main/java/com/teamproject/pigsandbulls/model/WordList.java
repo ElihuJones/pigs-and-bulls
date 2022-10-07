@@ -18,7 +18,7 @@ public class WordList {
     @SuppressWarnings("ConstantConditions")
     URI uri = getClass()
         .getClassLoader()
-        .getResource("sgb-words.txt")
+        .getResource("words-list.txt")
         .toURI();
     Path path = Path.of(uri);
     words = Files
