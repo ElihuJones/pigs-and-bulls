@@ -25,7 +25,7 @@ public class PigsBulls {
   public String userName;
   public static final int NUMBER_OF_CHARACTERS = 5;
 
-  // main function that handles the flow of the game
+  // main method that handles the flow of the game
   public static void main(String[] args) throws URISyntaxException, IOException {
     boolean checkCharacterValid;
     messages.displayTitle();
@@ -112,7 +112,7 @@ public class PigsBulls {
     return false;
   }
 
-  // Call exceptions functions to check user's guess
+  // Call validation methods to check user's guess
   private void checkUserInput(String userGuess) {
     validateUserInput.checkForCharacterInput(userGuess);
     validateUserInput.checkOversizedWord(userGuess);
