@@ -14,21 +14,18 @@ Source: [Wikipedia](https://en.wikipedia.org/wiki/Bulls_and_Cows)
 
 Status
 ------
-This project is currently in-progress. 
-Next steps can be found under our task management page: [Product Backlog](https://github.com/users/ElihuJones/projects/1)
+This project is feature complete. 
 
 Pseudocode 
 ----------
-
 Open console/Run Program 
 Instructions page: 
 User can see Instructions: 
 * Play Game or How to Play, options 
   * How to Play will show an Instructions screen: 
     * No duplicate letters, 5 letter UPPERCASE word. 
-User can choose 1 player or 2 player game.  
 
-If 1 player is chosen: 
+One player: 
 
 * Computer generates word with no characters repeating, 5 characters long. 
     * **Play Order**: 
@@ -43,26 +40,8 @@ If 1 player is chosen:
               * If user fails to match by max count 
                   * they see a score screen, and what the word was. 
   * User can choose to play again or exit console. 
-            
-If 2 players are chosen: 
-* Player 1  inputs 5 letter word 
-    * Input word checked for valid input, if invalid, output invalid input and state input requirements to the user.  
-* Player 2 inputs 5 letter word 
-    * Input word checked for valid input, if invalid, output invalid input and state input requirements to the user.  
-* Player 1 goes first: 
-    * Follows **Play Order** for 1 player 
-* Player 2 goes second: 
-    * Follows **Play Order** for 1 player 
-* Game Victory Conditions for multiplayer 
-    * If only 1 player guesses right, that player wins, Victory Message with player # 
-    * If both players guess right on the same turn count, TIE Message 
-    * If no player guesses correctly, compare scores: 
-        * Highest number of bulls between players wins ang gets Message 
-            * If bulls is tied, highest number of cows win 
-                * If that is tied, they tied. 
-* Users can choose to play again or exit console. 
 
-Concerns/Increased Scope Ideas: 
+Future Scope Ideas: 
 -------------------------------
 
 1. Formatted strings for user's ease in a console environment between windows & mac:  
@@ -84,13 +63,10 @@ Concerns/Increased Scope Ideas:
 
 5. See a 26 letter alphabet to help: 
     * Shows updatable alphabet to help, crosses out letters already used 
+6. Have an option for a 2 player game.
 
-6. Players can enter their name at the start of the game, stored in an array, and outputted on victory/defeat screen. 
+7. In a 2 player game, If playing again, switch starting player 
 
-7. For 2 player game, add RNG/Coin Flip for who goes first. 
-
-8. In a 2 player game, If playing again, switch starting player 
-
-9. Users can choose the word size for the computer to generate word from 
+8. Users can choose the word size for the computer to generate word from 
 
 [^1]: A word or phrase in which each letter occurs the same number of times
